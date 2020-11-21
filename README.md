@@ -17,12 +17,11 @@ This is a simple note taker application that can be used to write, save, and del
      In order to delete a note, you'll read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
 ## User Story
-
+```
 AS A user, I want to be able to write and save notes
-
 I WANT to be able to delete notes I've written before
-
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
+```
 
 ## Criteria
 
@@ -36,6 +35,6 @@ The user can also delete previously saved notes.
 ![noteTakerScreenshot](/Images/.png?raw=true)
 
 ## Deployed Application 
-* This app is deployed to Heroku. Below is a link you can folllow to depoyed application:
+* This app is deployed to Heroku. Below is a link you can folllow to the depoyed application:
 
 - - -
