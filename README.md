@@ -27,7 +27,7 @@ The application will allow users to create and save notes.
 The user can view previously saved notes.
 The user can also delete previously saved notes.
 * Below is an example of what the application may look like:
-![noteTakerScreenshot](/Images/.png?raw=true)
+![noteTakerScreenshot](/Images/noteTakerScreenshot.png?raw=true)
 
 ## Deployed Application 
 * This app is deployed to Heroku. Below is a link you can folllow to the depoyed application:
