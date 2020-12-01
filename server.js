@@ -42,6 +42,7 @@ app.post("/api/notes", (req, res) => {
     .then(function (data){
         allNotes = JSON.parse(data);
         if (newNote.id || newNote.id === 0) {
+            //give note an id
             let currentNote = allNotes[newNote.id];
             currentNote.title = newNote.title;
             currentNote.text = newNote.text;
@@ -49,6 +50,7 @@ app.post("/api/notes", (req, res) => {
             allNotes.push(newNote);
         }
         writefileAsync(path.join(__dirname, "./db/db.json"), JSON.stringify(allNotes))
+            //tell user note was created
             .then(function() {
                 console.log("note wrote to db");
             })
@@ -56,14 +58,16 @@ app.post("/api/notes", (req, res) => {
     res.json(newNote);
 });
 
-//delete note
+//delete note using id
 app.delete("/api/notes/:id", (req, res) => {
-    var id = req.params.id;
+    let id = req.params.id;
     readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
     .then(function (data) {
         allNotes = JSON.parse(data);
-        allNotes.spliced(id, 1);
+        //removes deletetd note
+        allNotes.splice(id, 1);
         writefileAsync(path.join(__dirname, "./db/db.json"), JSON.stringify(allNotes))
+        //tell user note was deleted 
         .then(function () {
             console.log("note deleted from db");
         })
@@ -72,5 +76,5 @@ app.delete("/api/notes/:id", (req, res) => {
 });
 
 
-//starts server to begin listening
+//starts server to begin listening, show user message
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
